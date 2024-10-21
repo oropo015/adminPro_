@@ -6,6 +6,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('questions', views.QuestionViewSet)
 router.register('answers', views.AnswerViewSet)
+router.register('exams', views.ExamViewSet)
 
 
 

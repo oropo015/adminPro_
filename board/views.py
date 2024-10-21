@@ -7,7 +7,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import QuestionFilter
 from .models import Question, Answer, Exam
-from .serializers import QuestionSerializer, AnswerSerializer
+from .serializers import QuestionSerializer, AnswerSerializer, ExamSerializers
 
 
 class QuestionViewSet(ModelViewSet):
@@ -16,7 +16,7 @@ class QuestionViewSet(ModelViewSet):
     lookup_field = 'id'
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     #filterset_fields
-    filterset_class = QuestionFilter
+    filter_class = QuestionFilter
     search_fields = ['text']
     pagination_class = PageNumberPagination
 
@@ -55,3 +55,7 @@ class QuestionDetail(RetrieveUpdateDestroyAPIView):
 class AnswerViewSet(ModelViewSet):
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
+
+class ExamViewSet(ModelViewSet):
+    queryset = Exam.objects.all()
+    serializer_class = ExamSerializers

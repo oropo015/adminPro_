@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from board.models import Answer, Question, Exam
+from board.models import Answer, Question, Exam, Candidate
 
 
 
@@ -21,3 +21,8 @@ class ExamSerializers(serializers.ModelSerializer):
     class Meta:
         model = Exam
         fields = ['title', 'duration','pass_mark', 'is_active']
+
+class CandidateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Candidate
+        fields =

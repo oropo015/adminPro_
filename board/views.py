@@ -6,8 +6,8 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import QuestionFilter
-from .models import Question, Answer, Exam
-from .serializers import QuestionSerializer, AnswerSerializer, ExamSerializers
+from .models import Question, Answer, Exam, Candidate
+from .serializers import QuestionSerializer, AnswerSerializer, ExamSerializers, CandidateSerializer
 
 
 class QuestionViewSet(ModelViewSet):
@@ -59,3 +59,8 @@ class AnswerViewSet(ModelViewSet):
 class ExamViewSet(ModelViewSet):
     queryset = Exam.objects.all()
     serializer_class = ExamSerializers
+
+class CandidateViewSet(ModelViewSet):
+    queryset = Candidate.objects.all()
+    serializer_class = CandidateSerializer
+

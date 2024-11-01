@@ -25,4 +25,4 @@ class ExamSerializers(serializers.ModelSerializer):
 class CandidateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidate
-        fields =
+        fields = '__all__'
